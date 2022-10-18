@@ -1,8 +1,4 @@
 function solution(arr) {
-    const num = arr.length;
-    let sum = 0;
-    for (let i of arr) {
-        sum += i;
-    }
-    return sum / num;
+    const sum = arr.reduce((prev, curr) => prev + curr, 0);
+    return sum / arr.length;
 }
