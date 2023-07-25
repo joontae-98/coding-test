@@ -1,20 +1,10 @@
 function solution(arr) {
     
     const lcm = (a, b) => {
-        let i, j;
-        
-        if (a - b > 0) {
-            i = a;
-            j = b;
-        } else {
-            i = b;
-            j = a;
+        if (a % b !== 0){
+            return lcm(b,a % b);
         }
-    
-        if (i % j !== 0){
-            return lcm(j,i % j);
-        }
-        return j;
+        return b;
     }
     
     return arr.reduce((a, b) => {
